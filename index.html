@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поликлиника №5</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://www.google.com/jsapi"></script>
+    <script>
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Число', 'Последняя неделя', 'Прошлая неделя'],
+                ['01', 40, 20],
+                ['02', 23, 35],
+                ['03', 32, 54],
+                ['04', 23, 23],
+                ['05', 11, 34],
+                ['06', 24, 12],
+            ]);
+            var options = {
+                hAxis: { title: 'Число' },
+                vAxis: { title: 'хапе хапе хапе' }
+            };
+            var chart1 = new google.visualization.ColumnChart(document.getElementById('hape'));
+            chart1.draw(data, options);
+
+            var chart1 = new google.visualization.ColumnChart(document.getElementById('chart'));
+            chart1.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">
+            <span class="logo">П</span>
+            <span>Поликлиника №5</span>
+        </div>
+
+        <nav class="nav">
+            <ul class="nav-container">
+                <li class="nav-element">
+                    МЕНЮ
+                </li>
+                <li class="nav-element nav-link active">Главная</li>
+                <li class="nav-element nav-link">Обращения</li>
+                <li class="nav-element nav-link">Приёмы</li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="header">
+        <div class="serach-container">
+            <input type="text" placeholder="Поиск..." class="serach-input">
+            <button class="search-button">
+                <img src="/assets/seaarch.png" alt="search">
+            </button>
+        </div>
+
+        <div class="account">
+            <div class="info">
+                <img src="/assets/smile.png" alt="smile">
+                <span>Эдуард Главврач</span>
+            </div>
+
+            <div class="uved">
+                <img src="/assets/bell.png" alt="bell">
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <div class="way-title">
+            Главная
+        </div>
+
+        <div class="main-grid-container">
+            <div class="main-grid-element happy-container">
+                <button class="more">Подробнее...</button>
+
+                <span class="title">Счастливые пациенты :)</span>
+                <span class="hightitle">7.853.021 <span class="prc">2.1 %</span></span>
+                <span class="subtitle">С 1 по 6 Декабря, 2023</span>
+
+                <div id="hape" style="width: 800px; height: 200px;"></div>
+            </div>
+
+            <div class="main-grid-element reception-container">
+                <button class="more">Подробнее...</button>
+
+                <span class="title">Приёмы</span>
+                <span class="subtitle">С 1 по 6 Декабря, 2023</span>
+
+                <div class="pie-chart-container">
+                    <div id="pie-chart"></div>
+
+                    <div class="legend">
+                        <div class="entry">
+                            <div class="entry-color"></div>
+                            <div class="entry-text">Утро</div>
+                        </div>
+                        <div class="entry">
+                            <div class="entry-color"></div>
+                            <div class="entry-text">Обед</div>
+                        </div>
+                        <div class="entry">
+                            <div class="entry-color"></div>
+                            <div class="entry-text">Вечер</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-grid-element rait-container">
+                <span class="title">Твой рейтинг</span>
+                <span class="subtitle">Ты молодец!</span>
+
+                <div class="circles">
+                    <div class="circle">
+                    </div>
+
+                    <div class="circle">
+                    </div>
+
+                    <div class="circle">
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-grid-element latest-container">
+                <span class="title">Последние приёмы</span>
+                <span class="subtitle">Ты можешь посмотреть информацию о них</span>
+
+                <ul>
+                    <li>
+                        <div class="person">
+                            <img src="https://fakeimg.pl/30x30/" alt="">
+                            <span>Леонид Фрешдог</span>
+                        </div>
+                        <span class="price">45.000 руб</span>
+                    </li>
+                    <li>
+                        <div class="person">
+                            <img src="https://fakeimg.pl/30x30/" alt="">
+                            <span>Майкл Хлебец</span>
+                        </div>
+                        <span class="price">75.000 руб</span>
+                    </li>
+                    <li>
+                        <div class="person">
+                            <img src="https://fakeimg.pl/30x30/" alt="">
+                            <span>Витя Вэисмаймайнд</span>
+                        </div>
+                        <span class="price">20.000 руб</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="main-grid-element appeal-container">
+                <button class="more">Подробнее...</button>
+
+                <span class="title">Обращения</span>
+                <span class="hightitle">2.621 <span class="prc">2.6 %</span></span>
+                <span class="subtitle">С 1 по 6 Декабря, 2023</span>
+
+                <div id="chart" style="width: 300px; height: 200px;"></div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
